@@ -8,6 +8,28 @@ A command-line tool to pick random items from a Notion database.
 npm install -g notion-random-pick
 ```
 
+### Notion API Integration Setup
+- This is not an official published Notion integration
+- Without connecting your database to the integration, API access will not work
+
+1. Create a Notion integration:
+  - Go to https://www.notion.so/my-integrations
+  - Create a new integration
+  - Save the Integration Token (API Key)
+
+2. Get Database ID:
+  - Open your Notion database in browser
+  - Copy the database ID from URL:
+    - URL format: `https://www.notion.so/{workspace}/{database_id}?v={view_id}`
+    - Database ID is the string between workspace name and "?v"
+
+3. Connect Database with Integration:
+  - Open your database in Notion
+  - Click on the "..." menu in the top-right corner
+  - Select "Add connections"
+  - Find and select your integration from the list
+  - Click "Confirm" to grant access
+
 ## Usage
 
 Run the command with the required options:
