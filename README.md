@@ -1,11 +1,11 @@
-# Notion Pick Random
+# Notion Random Pick
 
 A command-line tool to pick random items from a Notion database.
 
 ## Installation
 
 ```sh
-npm install -g notion-pick-random
+npm install -g notion-random-pick
 ```
 
 ## Usage
@@ -13,7 +13,7 @@ npm install -g notion-pick-random
 Run the command with the required options:
 
 ```sh
-notion-pick-random --count <number> --database-id <string> --notion-api-key <string>
+notion-random-pick --count <number> --database-id <string> --notion-api-key <string>
 ```
 
 You can also set environment variables to avoid passing options every time:
@@ -32,7 +32,7 @@ NOTION_DATABASE_ID=your_database_id
 ### Example
 
 ```sh
-notion-pick-random --count 5 --database-id your_database_id --notion-api-key your_notion_api_key
+notion-random-pick --count 5 --database-id your_database_id --notion-api-key your_notion_api_key
 ```
 
 This will output 5 random items from the specified Notion database.
@@ -43,8 +43,8 @@ You can add aliases to your zsh configuration file (`~/.zshrc`) for different da
 
 ```sh
 export NOTION_API_KEY=your_notion_api_key
-alias pick-work="notion-pick-random --database-id your_work_database_id"
-alias pick-personal="notion-pick-random --database-id your_personal_database_id"
+alias pick-work="notion-random-pick --database-id your_work_database_id"
+alias pick-personal="notion-random-pick --database-id your_personal_database_id"
 ```
 
 After adding the aliases, reload your zsh configuration:

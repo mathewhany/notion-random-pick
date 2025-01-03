@@ -1,7 +1,7 @@
 {
   "name": "notion-random-pick",
-  "version": "0.1.0",
-  "main": "index.ts",
+  "version": "0.1.1",
+  "main": "main.ts",
   "description": "Pick a random item from a Notion database",
   "dependencies": {
     "@notionhq/client": "^2.2.15",
