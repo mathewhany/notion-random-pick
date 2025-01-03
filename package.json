@@ -1,0 +1,16 @@
+{
+  "name": "notion-random-pick",
+  "version": "0.1.0",
+  "main": "index.ts",
+  "description": "Pick a random item from a Notion database",
+  "dependencies": {
+    "@notionhq/client": "^2.2.15",
+    "commander": "^13.0.0",
+    "dotenv": "^16.4.7",
+    "lodash.samplesize": "^4.2.0"
+  },
+  "bin": "main.ts",
+  "devDependencies": {
+    "@types/lodash.samplesize": "^4.2.9"
+  }
+}
