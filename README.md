@@ -1,3 +1,6 @@
+[![NPM Version](https://img.shields.io/npm/v/notion-random-pick.svg)](https://www.npmjs.com/package/notion-random-pick)
+[![GitHub Repository](https://img.shields.io/badge/github-notion--random--pick-blue.svg)](https://github.com/mathewhany/notion-random-pick)
+
 # Notion Random Pick
 
 A command-line tool to pick random items from a Notion database.
