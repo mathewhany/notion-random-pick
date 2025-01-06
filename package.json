@@ -7,10 +7,16 @@
     "@notionhq/client": "^2.2.15",
     "commander": "^13.0.0",
     "dotenv": "^16.4.7",
-    "lodash.samplesize": "^4.2.0"
+    "lodash.samplesize": "^4.2.0",
+    "node-temp-server": "^0.1.2",
+    "open": "^10.1.0"
   },
   "bin": "main.ts",
+  "scripts": {
+    "start": "tsx main.ts"
+  },
   "devDependencies": {
-    "@types/lodash.samplesize": "^4.2.9"
+    "@types/lodash.samplesize": "^4.2.9",
+    "tsx": "^4.19.2"
   }
 }

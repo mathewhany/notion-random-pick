@@ -5,6 +5,7 @@ import { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 import dotenv from "dotenv";
 import sampleSize from "lodash.samplesize";
 import { program } from "commander";
+import { getNotionAccessToken } from "./notion-auth";
 
 dotenv.config();
 
@@ -45,7 +46,10 @@ async function main() {
     .requiredOption(
       "-k, --notion-api-key <string>",
       "Notion API key",
-      process.env.NOTION_API_KEY
+      await getNotionAccessToken({
+        clientId: process.env.NOTION_OAUTH_CLIENT_ID,
+        clientSecret: process.env.NOTION_OAUTH_CLIENT_SECRET,
+      })
     )
     .parse();
 

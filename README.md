@@ -11,28 +11,6 @@ A command-line tool to pick random items from a Notion database.
 npm install -g notion-random-pick
 ```
 
-### Notion API Integration Setup
-- This is not an official published Notion integration
-- Without connecting your database to the integration, API access will not work
-
-1. Create a Notion integration:
-  - Go to https://www.notion.so/my-integrations
-  - Create a new integration
-  - Save the Integration Token (API Key)
-
-2. Get Database ID:
-  - Open your Notion database in browser
-  - Copy the database ID from URL:
-    - URL format: `https://www.notion.so/{workspace}/{database_id}?v={view_id}`
-    - Database ID is the string between workspace name and "?v"
-
-3. Connect Database with Integration:
-  - Open your database in Notion
-  - Click on the "..." menu in the top-right corner
-  - Select "Add connections"
-  - Find and select your integration from the list
-  - Click "Confirm" to grant access
-
 ## Usage
 
 Run the command with the required options:
@@ -44,7 +22,6 @@ notion-random-pick --count <number> --database-id <string> --notion-api-key <str
 You can also set environment variables to avoid passing options every time:
 
 ```env
-NOTION_API_KEY=your_notion_api_key
 NOTION_DATABASE_ID=your_database_id
 ```
 
@@ -52,22 +29,25 @@ NOTION_DATABASE_ID=your_database_id
 
 - `-n, --count <number>`: Number of random items to pick (default: 3)
 - `-d, --database-id <string>`: Notion database ID
-- `-k, --notion-api-key <string>`: Notion API key
+- `-k, --notion-api-key <string>`: Notion API key or access token. Leave empty for authentication in browser.
 
 ### Example
 
 ```sh
-notion-random-pick --count 5 --database-id your_database_id --notion-api-key your_notion_api_key
+notion-random-pick --count 5 --database-id your_database_id --notion-api-key your_notion_api_key_or_token
 ```
 
 This will output 5 random items from the specified Notion database.
+
+### Authentication Using Notion OAuth
+
+If you have a Notion integration with OAuth, you can use the `NOTION_OAUTH_CLIENT_ID` and `NOTION_OAUTH_CLIENT_SECRET` environment variables to authenticate, instead of using the API key.
 
 ### Aliases
 
 You can add aliases to your zsh configuration file (`~/.zshrc`) for different databases to simplify usage. For example:
 
 ```sh
-export NOTION_API_KEY=your_notion_api_key
 alias pick-work="notion-random-pick --database-id your_work_database_id"
 alias pick-personal="notion-random-pick --database-id your_personal_database_id"
 ```
